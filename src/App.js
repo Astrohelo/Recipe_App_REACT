@@ -13,10 +13,10 @@ function App() {
   const[query, setQuery] = useState(search);
 
 
-  const { colorMode, toggleColorMode } = useColorMode();
-  const formBackGround = useColorModeValue("gray.100", "gray.700");
+  const { colorMode, toggleColorMode } = useColorMode()
+  const formBackGround = useColorModeValue("linear(to-r, green.200, pink.500)", "gray.700");
 
-  const APP_KEY = "YOUR_APP_KEY";
+  const APP_KEY = "YOUR_APP_KEY"; 
   const APP_ID = "YOUR_API_ID";
 
   useEffect (()=>{
@@ -42,15 +42,15 @@ function App() {
     setRecipes(data.hits)
 
   }
-  
+ 
   return (
-    <ChakraProvider >
-      <Box  bgGradient="linear(to-r, green.200, pink.500)"   >
+      <Box   bgGradient={formBackGround}  >
         <div className="App">
           <header className="App-header">
             <form className="search-form" onSubmit={getSearch}>
               <Input className="search-bar"  w="30%" m="5" mr="0" mb="100px" value={search} onChange={updateSearch}></Input>
               <Button colorScheme="teal" mb="2"  type="submit">Search</Button>
+              <Button mb="2" onClick={toggleColorMode}> Toggle {colorMode === "light" ? "Dark" : "Light"} </Button>
             </form>
           </header>
           <div className="recipes">
@@ -64,7 +64,6 @@ function App() {
           </div>
         </div>
       </Box>
-    </ChakraProvider>
   );
 }
 
