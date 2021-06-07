@@ -42,18 +42,15 @@ function App() {
     setRecipes(data.hits)
 
   }
-  //bgGradient="linear(to-r, green.200, pink.500)"
+  
   return (
     <ChakraProvider >
-      <Box  colorMode={formBackGround}   >
+      <Box  bgGradient="linear(to-r, green.200, pink.500)"   >
         <div className="App">
           <header className="App-header">
             <form className="search-form" onSubmit={getSearch}>
               <Input className="search-bar"  w="30%" m="5" mr="0" mb="100px" value={search} onChange={updateSearch}></Input>
               <Button colorScheme="teal" mb="2"  type="submit">Search</Button>
-              <Button  onClick={toggleColorMode}>
-                Toggle Mode
-              </Button>
             </form>
           </header>
           <div className="recipes">
