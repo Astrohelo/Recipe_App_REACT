@@ -1,0 +1,20 @@
+.App {
+  text-align: center;
+}
+
+.search-bar {
+  width: 50%;
+  border: none;
+  padding: 10px;
+}
+
+.recipes {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.kep:hover {
+  transform: scale(1.05);
+  transition-duration: 0.3s;
+}
